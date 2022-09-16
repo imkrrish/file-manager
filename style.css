@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #16315f;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  display: block;
+  position: relative;
+  background-color: #025bee;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  width: 250px;
+  padding: 18px 0;
+  border-radius: 5px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.table {
+  margin: auto;
+  margin-top: 50px;
+  width: 90%;
+  border-collapse: collapse;
+}
+
+.table td,
+.table th {
+  padding: 12px 15px;
+  border: 1px solid #a2c0f1;
+  text-align: center;
+  font-size: 16px;
+}
+
+.table th {
+  background-color: #245bb5;
+  color: #ffffff;
+}
+
+.table td {
+  color: #ccdcf6;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #5b88d2;
+}
+
+.fa-circle-info {
+  color: white;
+  font-size: 21px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  top: 117%;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 300;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+/*responsive*/
+
+@media (max-width: 500px) {
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+  .table tr {
+    margin-bottom: 15px;
+  }
+  .table td {
+    padding-left: 5%;
+    position: relative;
+    text-align: left;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .tooltip .tooltiptext {
+    top: -8px;
+    left: 400%;
+  }
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+  }
+}
